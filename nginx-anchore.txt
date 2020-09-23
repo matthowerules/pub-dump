@@ -1,0 +1,13 @@
+Image Digest: sha256:794275d96b4ab96eeb954728a7bf11156570e8372ecd5ed0cbc7280313a27d19
+Full Tag: docker.io/nginx:latest
+Image ID: 7e4d58f0e5f3b60077e9a5d96b4be1b974b5a484f54f9393000a99f3b6816e3d
+Status: pass
+Last Eval: 2020-09-23T16:34:42Z
+Policy ID: 2c53a13c-1765-11e8-82ef-23527761d060
+Final Action: warn
+Final Action Reason: policy_evaluation
+
+Gate                   Trigger            Detail                                                                                                                                                Status        
+dockerfile             instruction        Dockerfile directive 'HEALTHCHECK' not found, matching condition 'not_exists' check                                                                   warn          
+vulnerabilities        package            MEDIUM Vulnerability found in os package type (dpkg) - libgnutls30 (CVE-2011-3389 - https://security-tracker.debian.org/tracker/CVE-2011-3389)        warn          
+

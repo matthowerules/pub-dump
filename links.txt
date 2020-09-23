@@ -1,0 +1,20 @@
+Container Security Approaches
+https://www.secjuice.com/how-to-harden-docker-containers/
+
+
+Anchore Deets
+https://geekflare.com/anchore-container-security-scanner/
+https://www.kitploit.com/2020/09/anchore-engine-service-that-analyzes.html
+https://hub.docker.com/r/anchore/anchore-engine
+
+Anchore CICD Integration
+https://anchore.com/blog/integrating-anchore-scanning-with-gitlab/
+https://anchore.com/blog/anchore-and-gitlab-pipeline-configuration/
+https://docs.anchore.com/current/docs/using/integration/ci_cd/gitlab/
+https://anchore.com/cicd/#cicd
+
+
+SCAP on non-RHEL (fucking nightmare)
+http://www.open-scap.org/security-policies/scap-security-guide/#documentation
+https://gist.github.com/gregelin/f94ba31f004ca4acea87
+https://github.com/ComplianceAsCode/content/releases

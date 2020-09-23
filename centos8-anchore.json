@@ -1,0 +1,919 @@
+[
+    {
+        "sha256:fc4a234b91cc4b542bac8a6ad23b2ddcee60ae68fc4dbd4a52efb5f1b0baad71": {
+            "docker.io/centos:latest": [
+                {
+                    "detail": {
+                        "policy": {
+                            "blacklisted_images": [], 
+                            "comment": "Default bundle", 
+                            "id": "2c53a13c-1765-11e8-82ef-23527761d060", 
+                            "mappings": [
+                                {
+                                    "id": "c4f9bf74-dc38-4ddf-b5cf-00e9c0074611", 
+                                    "image": {
+                                        "type": "tag", 
+                                        "value": "*"
+                                    }, 
+                                    "name": "default", 
+                                    "policy_id": "48e6f7d6-1765-11e8-b5f9-8b6f228548b6", 
+                                    "registry": "*", 
+                                    "repository": "*", 
+                                    "whitelist_ids": [
+                                        "37fd763e-1765-11e8-add4-3b16c029ac5c"
+                                    ]
+                                }
+                            ], 
+                            "name": "Default bundle", 
+                            "policies": [
+                                {
+                                    "comment": "System default policy", 
+                                    "id": "48e6f7d6-1765-11e8-b5f9-8b6f228548b6", 
+                                    "name": "DefaultPolicy", 
+                                    "rules": [
+                                        {
+                                            "action": "STOP", 
+                                            "gate": "dockerfile", 
+                                            "id": "ce7b8000-829b-4c27-8122-69cd59018400", 
+                                            "params": [
+                                                {
+                                                    "name": "ports", 
+                                                    "value": "22"
+                                                }, 
+                                                {
+                                                    "name": "type", 
+                                                    "value": "blacklist"
+                                                }
+                                            ], 
+                                            "trigger": "exposed_ports"
+                                        }, 
+                                        {
+                                            "action": "WARN", 
+                                            "gate": "dockerfile", 
+                                            "id": "312d9e41-1c05-4e2f-ad89-b7d34b0855bb", 
+                                            "params": [
+                                                {
+                                                    "name": "instruction", 
+                                                    "value": "HEALTHCHECK"
+                                                }, 
+                                                {
+                                                    "name": "check", 
+                                                    "value": "not_exists"
+                                                }
+                                            ], 
+                                            "trigger": "instruction"
+                                        }, 
+                                        {
+                                            "action": "WARN", 
+                                            "gate": "vulnerabilities", 
+                                            "id": "6b5c14e7-a6f7-48cc-99d2-959273a2c6fa", 
+                                            "params": [
+                                                {
+                                                    "name": "max_days_since_sync", 
+                                                    "value": "2"
+                                                }
+                                            ], 
+                                            "trigger": "stale_feed_data"
+                                        }, 
+                                        {
+                                            "action": "WARN", 
+                                            "gate": "vulnerabilities", 
+                                            "id": "3e79ea94-18c4-4d26-9e29-3b9172a62c2e", 
+                                            "params": [], 
+                                            "trigger": "vulnerability_data_unavailable"
+                                        }, 
+                                        {
+                                            "action": "WARN", 
+                                            "gate": "vulnerabilities", 
+                                            "id": "6063fdde-b1c5-46af-973a-915739451ac4", 
+                                            "params": [
+                                                {
+                                                    "name": "package_type", 
+                                                    "value": "all"
+                                                }, 
+                                                {
+                                                    "name": "severity_comparison", 
+                                                    "value": "="
+                                                }, 
+                                                {
+                                                    "name": "severity", 
+                                                    "value": "medium"
+                                                }
+                                            ], 
+                                            "trigger": "package"
+                                        }, 
+                                        {
+                                            "action": "STOP", 
+                                            "gate": "vulnerabilities", 
+                                            "id": "b30e8abc-444f-45b1-8a37-55be1b8c8bb5", 
+                                            "params": [
+                                                {
+                                                    "name": "package_type", 
+                                                    "value": "all"
+                                                }, 
+                                                {
+                                                    "name": "severity_comparison", 
+                                                    "value": ">"
+                                                }, 
+                                                {
+                                                    "name": "severity", 
+                                                    "value": "medium"
+                                                }
+                                            ], 
+                                            "trigger": "package"
+                                        }
+                                    ], 
+                                    "version": "1_0"
+                                }
+                            ], 
+                            "version": "1_0", 
+                            "whitelisted_images": [], 
+                            "whitelists": [
+                                {
+                                    "comment": "Default global whitelist", 
+                                    "id": "37fd763e-1765-11e8-add4-3b16c029ac5c", 
+                                    "items": [], 
+                                    "name": "Global Whitelist", 
+                                    "version": "1_0"
+                                }
+                            ]
+                        }, 
+                        "result": {
+                            "bundle": {
+                                "blacklisted_images": [], 
+                                "comment": "Default bundle", 
+                                "id": "2c53a13c-1765-11e8-82ef-23527761d060", 
+                                "mappings": [
+                                    {
+                                        "id": "c4f9bf74-dc38-4ddf-b5cf-00e9c0074611", 
+                                        "image": {
+                                            "type": "tag", 
+                                            "value": "*"
+                                        }, 
+                                        "name": "default", 
+                                        "policy_id": "48e6f7d6-1765-11e8-b5f9-8b6f228548b6", 
+                                        "registry": "*", 
+                                        "repository": "*", 
+                                        "whitelist_ids": [
+                                            "37fd763e-1765-11e8-add4-3b16c029ac5c"
+                                        ]
+                                    }
+                                ], 
+                                "name": "Default bundle", 
+                                "policies": [
+                                    {
+                                        "comment": "System default policy", 
+                                        "id": "48e6f7d6-1765-11e8-b5f9-8b6f228548b6", 
+                                        "name": "DefaultPolicy", 
+                                        "rules": [
+                                            {
+                                                "action": "STOP", 
+                                                "gate": "dockerfile", 
+                                                "id": "ce7b8000-829b-4c27-8122-69cd59018400", 
+                                                "params": [
+                                                    {
+                                                        "name": "ports", 
+                                                        "value": "22"
+                                                    }, 
+                                                    {
+                                                        "name": "type", 
+                                                        "value": "blacklist"
+                                                    }
+                                                ], 
+                                                "trigger": "exposed_ports"
+                                            }, 
+                                            {
+                                                "action": "WARN", 
+                                                "gate": "dockerfile", 
+                                                "id": "312d9e41-1c05-4e2f-ad89-b7d34b0855bb", 
+                                                "params": [
+                                                    {
+                                                        "name": "instruction", 
+                                                        "value": "HEALTHCHECK"
+                                                    }, 
+                                                    {
+                                                        "name": "check", 
+                                                        "value": "not_exists"
+                                                    }
+                                                ], 
+                                                "trigger": "instruction"
+                                            }, 
+                                            {
+                                                "action": "WARN", 
+                                                "gate": "vulnerabilities", 
+                                                "id": "6b5c14e7-a6f7-48cc-99d2-959273a2c6fa", 
+                                                "params": [
+                                                    {
+                                                        "name": "max_days_since_sync", 
+                                                        "value": "2"
+                                                    }
+                                                ], 
+                                                "trigger": "stale_feed_data"
+                                            }, 
+                                            {
+                                                "action": "WARN", 
+                                                "gate": "vulnerabilities", 
+                                                "id": "3e79ea94-18c4-4d26-9e29-3b9172a62c2e", 
+                                                "params": [], 
+                                                "trigger": "vulnerability_data_unavailable"
+                                            }, 
+                                            {
+                                                "action": "WARN", 
+                                                "gate": "vulnerabilities", 
+                                                "id": "6063fdde-b1c5-46af-973a-915739451ac4", 
+                                                "params": [
+                                                    {
+                                                        "name": "package_type", 
+                                                        "value": "all"
+                                                    }, 
+                                                    {
+                                                        "name": "severity_comparison", 
+                                                        "value": "="
+                                                    }, 
+                                                    {
+                                                        "name": "severity", 
+                                                        "value": "medium"
+                                                    }
+                                                ], 
+                                                "trigger": "package"
+                                            }, 
+                                            {
+                                                "action": "STOP", 
+                                                "gate": "vulnerabilities", 
+                                                "id": "b30e8abc-444f-45b1-8a37-55be1b8c8bb5", 
+                                                "params": [
+                                                    {
+                                                        "name": "package_type", 
+                                                        "value": "all"
+                                                    }, 
+                                                    {
+                                                        "name": "severity_comparison", 
+                                                        "value": ">"
+                                                    }, 
+                                                    {
+                                                        "name": "severity", 
+                                                        "value": "medium"
+                                                    }
+                                                ], 
+                                                "trigger": "package"
+                                            }
+                                        ], 
+                                        "version": "1_0"
+                                    }
+                                ], 
+                                "version": "1_0", 
+                                "whitelisted_images": [], 
+                                "whitelists": [
+                                    {
+                                        "comment": "Default global whitelist", 
+                                        "id": "37fd763e-1765-11e8-add4-3b16c029ac5c", 
+                                        "items": [], 
+                                        "name": "Global Whitelist", 
+                                        "version": "1_0"
+                                    }
+                                ]
+                            }, 
+                            "created_at": 1600877448, 
+                            "evaluation_problems": [], 
+                            "final_action": "stop", 
+                            "final_action_reason": "policy_evaluation", 
+                            "image_digest": "sha256:fc4a234b91cc4b542bac8a6ad23b2ddcee60ae68fc4dbd4a52efb5f1b0baad71", 
+                            "image_id": "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                            "last_modified": 1600877448, 
+                            "matched_blacklisted_images_rule": false, 
+                            "matched_mapping_rule": {
+                                "id": "c4f9bf74-dc38-4ddf-b5cf-00e9c0074611", 
+                                "image": {
+                                    "type": "tag", 
+                                    "value": "*"
+                                }, 
+                                "name": "default", 
+                                "policy_id": "48e6f7d6-1765-11e8-b5f9-8b6f228548b6", 
+                                "registry": "*", 
+                                "repository": "*", 
+                                "whitelist_ids": [
+                                    "37fd763e-1765-11e8-add4-3b16c029ac5c"
+                                ]
+                            }, 
+                            "matched_whitelisted_images_rule": false, 
+                            "result": {
+                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566": {
+                                    "result": {
+                                        "final_action": "stop", 
+                                        "header": [
+                                            "Image_Id", 
+                                            "Repo_Tag", 
+                                            "Trigger_Id", 
+                                            "Gate", 
+                                            "Trigger", 
+                                            "Check_Output", 
+                                            "Gate_Action", 
+                                            "Whitelisted", 
+                                            "Policy_Id"
+                                        ], 
+                                        "row_count": 53, 
+                                        "rows": [
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "41cb7cdf04850e33a11f80c42bf660b3", 
+                                                "dockerfile", 
+                                                "instruction", 
+                                                "Dockerfile directive 'HEALTHCHECK' not found, matching condition 'not_exists' check", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-8619+bind-export-libs", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - bind-export-libs (CVE-2020-8619 - https://access.redhat.com/security/cve/CVE-2020-8619)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-8623+bind-export-libs", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - bind-export-libs (CVE-2020-8623 - https://access.redhat.com/security/cve/CVE-2020-8623)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-8622+bind-export-libs", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - bind-export-libs (CVE-2020-8622 - https://access.redhat.com/security/cve/CVE-2020-8622)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-8624+bind-export-libs", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - bind-export-libs (CVE-2020-8624 - https://access.redhat.com/security/cve/CVE-2020-8624)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-14382+cryptsetup-libs", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - cryptsetup-libs (CVE-2020-14382 - https://access.redhat.com/security/cve/CVE-2020-14382)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-8177+curl", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - curl (CVE-2020-8177 - https://access.redhat.com/security/cve/CVE-2020-8177)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2019-19906+cyrus-sasl-lib", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - cyrus-sasl-lib (CVE-2019-19906 - https://access.redhat.com/security/cve/CVE-2019-19906)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-1752+glibc", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - glibc (CVE-2020-1752 - https://access.redhat.com/security/cve/CVE-2020-1752)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-1751+glibc", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - glibc (CVE-2020-1751 - https://access.redhat.com/security/cve/CVE-2020-1751)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-10029+glibc", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - glibc (CVE-2020-10029 - https://access.redhat.com/security/cve/CVE-2020-10029)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-1752+glibc-common", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - glibc-common (CVE-2020-1752 - https://access.redhat.com/security/cve/CVE-2020-1752)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-1751+glibc-common", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - glibc-common (CVE-2020-1751 - https://access.redhat.com/security/cve/CVE-2020-1751)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-10029+glibc-common", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - glibc-common (CVE-2020-10029 - https://access.redhat.com/security/cve/CVE-2020-10029)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-1752+glibc-minimal-langpack", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - glibc-minimal-langpack (CVE-2020-1752 - https://access.redhat.com/security/cve/CVE-2020-1752)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-1751+glibc-minimal-langpack", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - glibc-minimal-langpack (CVE-2020-1751 - https://access.redhat.com/security/cve/CVE-2020-1751)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-10029+glibc-minimal-langpack", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - glibc-minimal-langpack (CVE-2020-10029 - https://access.redhat.com/security/cve/CVE-2020-10029)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-24659+gnutls", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - gnutls (CVE-2020-24659 - https://access.redhat.com/security/cve/CVE-2020-24659)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2019-19221+libarchive", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - libarchive (CVE-2019-19221 - https://access.redhat.com/security/cve/CVE-2019-19221)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-8177+libcurl-minimal", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - libcurl-minimal (CVE-2020-8177 - https://access.redhat.com/security/cve/CVE-2020-8177)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2019-13627+libgcrypt", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - libgcrypt (CVE-2019-13627 - https://access.redhat.com/security/cve/CVE-2019-13627)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2019-20387+libsolv", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - libsolv (CVE-2019-20387 - https://access.redhat.com/security/cve/CVE-2019-20387)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-7595+libxml2", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - libxml2 (CVE-2020-7595 - https://access.redhat.com/security/cve/CVE-2020-7595)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2019-20388+libxml2", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - libxml2 (CVE-2019-20388 - https://access.redhat.com/security/cve/CVE-2019-20388)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2019-19956+libxml2", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - libxml2 (CVE-2019-19956 - https://access.redhat.com/security/cve/CVE-2019-19956)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-24977+libxml2", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - libxml2 (CVE-2020-24977 - https://access.redhat.com/security/cve/CVE-2020-24977)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-15945+lua-libs", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - lua-libs (CVE-2020-15945 - https://access.redhat.com/security/cve/CVE-2020-15945)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-14422+platform-python", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - platform-python (CVE-2020-14422 - https://access.redhat.com/security/cve/CVE-2020-14422)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-8492+platform-python", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - platform-python (CVE-2020-8492 - https://access.redhat.com/security/cve/CVE-2020-8492)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2019-20907+platform-python", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - platform-python (CVE-2019-20907 - https://access.redhat.com/security/cve/CVE-2019-20907)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-14422+python3-libs", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - python3-libs (CVE-2020-14422 - https://access.redhat.com/security/cve/CVE-2020-14422)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-8492+python3-libs", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - python3-libs (CVE-2020-8492 - https://access.redhat.com/security/cve/CVE-2020-8492)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2019-20907+python3-libs", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - python3-libs (CVE-2019-20907 - https://access.redhat.com/security/cve/CVE-2019-20907)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2019-20916+python3-pip-wheel", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - python3-pip-wheel (CVE-2019-20916 - https://access.redhat.com/security/cve/CVE-2019-20916)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-6405+sqlite-libs", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - sqlite-libs (CVE-2020-6405 - https://access.redhat.com/security/cve/CVE-2020-6405)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2019-20218+sqlite-libs", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - sqlite-libs (CVE-2019-20218 - https://access.redhat.com/security/cve/CVE-2019-20218)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-9327+sqlite-libs", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - sqlite-libs (CVE-2020-9327 - https://access.redhat.com/security/cve/CVE-2020-9327)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-15358+sqlite-libs", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - sqlite-libs (CVE-2020-15358 - https://access.redhat.com/security/cve/CVE-2020-15358)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-13630+sqlite-libs", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - sqlite-libs (CVE-2020-13630 - https://access.redhat.com/security/cve/CVE-2020-13630)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-13434+sqlite-libs", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - sqlite-libs (CVE-2020-13434 - https://access.redhat.com/security/cve/CVE-2020-13434)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-13435+sqlite-libs", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - sqlite-libs (CVE-2020-13435 - https://access.redhat.com/security/cve/CVE-2020-13435)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-13632+sqlite-libs", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - sqlite-libs (CVE-2020-13632 - https://access.redhat.com/security/cve/CVE-2020-13632)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-13631+sqlite-libs", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - sqlite-libs (CVE-2020-13631 - https://access.redhat.com/security/cve/CVE-2020-13631)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2019-3842+systemd", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - systemd (CVE-2019-3842 - https://access.redhat.com/security/cve/CVE-2019-3842)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-13776+systemd", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - systemd (CVE-2020-13776 - https://access.redhat.com/security/cve/CVE-2020-13776)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2019-3842+systemd-libs", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - systemd-libs (CVE-2019-3842 - https://access.redhat.com/security/cve/CVE-2019-3842)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-13776+systemd-libs", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - systemd-libs (CVE-2020-13776 - https://access.redhat.com/security/cve/CVE-2020-13776)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2019-3842+systemd-pam", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - systemd-pam (CVE-2019-3842 - https://access.redhat.com/security/cve/CVE-2019-3842)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-13776+systemd-pam", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - systemd-pam (CVE-2020-13776 - https://access.redhat.com/security/cve/CVE-2020-13776)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2019-3842+systemd-udev", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - systemd-udev (CVE-2019-3842 - https://access.redhat.com/security/cve/CVE-2019-3842)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-13776+systemd-udev", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - systemd-udev (CVE-2020-13776 - https://access.redhat.com/security/cve/CVE-2020-13776)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2019-20807+vim-minimal", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "MEDIUM Vulnerability found in os package type (rpm) - vim-minimal (CVE-2019-20807 - https://access.redhat.com/security/cve/CVE-2019-20807)", 
+                                                "warn", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ], 
+                                            [
+                                                "0d120b6ccaa8c5e149176798b3501d4dd1885f961922497cd0abef155c869566", 
+                                                "docker.io/centos:latest", 
+                                                "CVE-2020-14352+librepo", 
+                                                "vulnerabilities", 
+                                                "package", 
+                                                "HIGH Vulnerability found in os package type (rpm) - librepo (CVE-2020-14352 - https://access.redhat.com/security/cve/CVE-2020-14352)", 
+                                                "stop", 
+                                                false, 
+                                                "48e6f7d6-1765-11e8-b5f9-8b6f228548b6"
+                                            ]
+                                        ]
+                                    }
+                                }, 
+                                "policy_data": [], 
+                                "policy_name": "", 
+                                "whitelist_data": [], 
+                                "whitelist_names": []
+                            }, 
+                            "status": "fail", 
+                            "tag": "docker.io/centos:latest", 
+                            "user_id": "admin"
+                        }
+                    }, 
+                    "last_evaluation": "2020-09-23T16:42:49Z", 
+                    "policyId": "2c53a13c-1765-11e8-82ef-23527761d060", 
+                    "status": "fail"
+                }
+            ]
+        }
+    }
+]
