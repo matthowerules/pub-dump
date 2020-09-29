@@ -1,5 +1,5 @@
 FROM alpine:latest
-LABEL maintainer="matt.howe@omniarsenal.com"
+LABEL maintainer="matt.howe"
 
 # We'll likely need to add SSL root certificates
 RUN apk --no-cache add ca-certificates
