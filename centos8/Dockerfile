@@ -1,5 +1,5 @@
 FROM centos:latest
-LABEL maintainer="matt.howe@omniarsenal.com"
+LABEL maintainer="matt.howe"
 
 #RUN yum check-update
 RUN yum update -y
